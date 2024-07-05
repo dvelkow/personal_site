@@ -1,0 +1,107 @@
+body {
+    background-color: #000000;
+    color: #40e07d;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 50rem;
+    margin: 0 auto;
+    border-left: 1px dashed rgba(64, 224, 125, 0.3);
+    border-right: 1px dashed rgba(64, 224, 125, 0.3);
+    min-height: 100vh;
+    padding: 0rem;
+}
+.header {
+    display: inline-block;
+    gap: 0rem;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+    flex-direction: column;
+}
+@media (min-width: 640px) {
+    .header {
+        flex-direction: row;
+    }
+}
+.profile-image {
+    width: 15rem;
+    height: 6rem;
+    font-size: 3.6px;
+    line-height: 4.4px;
+    white-space: pre;
+    overflow: visible;
+    opacity: 1;
+}
+.profile-info p {
+    margin: 0px;
+}
+.quote {
+    font-style: italic;
+    opacity: 0.5;
+    font-size: 0.75rem;
+}
+.binary-line {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(64, 224, 125, 0.75);
+    color: black;
+    font-size: 0.875rem;
+    padding: 0.1rem 0;
+}
+.binary-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 40s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+.section {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+.section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.activity {
+    margin-top: 1.5rem;
+}
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+@media (min-width: 640px) {
+    .activity-stats {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+.activity-graph {
+    height: 200px;
+    background-color: rgba(64, 224, 125, 0.1);
+    position: relative;
+}
+.projects-list {
+    list-style-type: none;
+    padding: 0;
+    opacity: 0.7;
+}
+.projects-list li {
+    margin-bottom: 0.5rem;
+}
+.projects-list a {
+    color: #40e07d;
+    text-decoration: none;
+}
+.projects-list a:hover {
+    text-decoration: underline;
+}
