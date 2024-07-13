@@ -3,7 +3,7 @@ body {
     color: #40e07d;
     font-family: 'Courier New', monospace;
     margin: 0;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
 }
 .container {
@@ -52,16 +52,22 @@ body {
     color: black;
     font-size: 0.875rem;
     padding: 0.1rem 0;
-}
-.binary-content {
+  }
+  
+  .binary-content {
     display: inline-block;
-    padding-left: 100%;
-    animation: marquee 40s linear infinite;
-}
-@keyframes marquee {
+    padding-left: 0%;
+    animation: scroll 50s linear infinite;
+  }
+  
+  .binary-content::after {
+    content: "01111001 01101111 01110101 00100000 01110010 01100101 01100001 01101100 01101100 01111001 00100000 01100011 01101000 01100101 01100011 01101011 01100101 01100100 00100000 01110111 01101000 01100001 01110100 00100000 01110100 01101000 01100101 00100000 01101101 01100101 01110011 01110011 01100001 01100111 01100101 00100000 01101001 01110011 00101100 00100000 01101000 01110101 01101000 00111111";
+  }
+  
+  @keyframes scroll {
     0% { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
-}
+  }
 .section {
     margin-top: 1.5rem;
     padding: 0 1rem;
@@ -80,16 +86,6 @@ body {
     margin-bottom: 1rem;
     opacity: 0.7;
 }
-@media (min-width: 640px) {
-    .activity-stats {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-.activity-graph {
-    height: 200px;
-    background-color: rgba(64, 224, 125, 0.1);
-    position: relative;
-}
 .projects-list {
     list-style-type: none;
     padding: 0;
@@ -105,3 +101,40 @@ body {
 .projects-list a:hover {
     text-decoration: underline;
 }
+
+.terminal {
+    height: 300px;
+    background-color: rgba(64, 224, 125, 0.1);
+    border: 1px solid #40e07d;
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .terminal-output {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  
+  .input-line {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-line span {
+    color: #40e07d;
+    margin-right: 5px;
+  }
+  
+  .input-line input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #40e07d;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+  }
+  
+  .input-line input:focus {
+    outline: none;
+  }
