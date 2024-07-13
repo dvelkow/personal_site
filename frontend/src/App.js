@@ -10,11 +10,11 @@ const Terminal = () => {
 
   const personalInfo = {
     location: "Sofia, Bulgaria",
-    skills: ["Python", "JavaScript", "React", "Data Analysis", "Machine Learning"],
-    hobbies: ["Hiking", "Reading sci-fi", "Playing guitar", "Cooking"],
+    skills: "Python, SQL & NoSQL, AWS, Spark, Hadoop, Docker, Bash, Linux, ML",
+    hobbies: "Exploring Datasets, Solving Kaggle Problems, Chess, Fitness, Reading",
     work_experience: [
-      "Data Scientist at TechCorp (2020-Present)",
-      "Junior Developer at StartUp Inc. (2018-2020)"
+      "Video Editor at Replayed.co (2020-2024)",
+      "AI Automation Python Developer at OptimateX, a personal company (2024-present)"
     ]
   };
 
