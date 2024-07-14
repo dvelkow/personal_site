@@ -9,3 +9,11 @@ frontend/package-lock.json
 /frontend/node_modules
 /frontend/node_modules/.cache
 /frontend/node_modules/.cache/default-development
+frontend/node_modules/.bin/ansi-html
+/frontend/node_modules
+/frontend/node_modules/.bin
+/frontend/node_modules/.bin
+*.map
+*.map
+*.js
+/frontend/node_modules
