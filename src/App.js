@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const quotes = [
+  "The future is inescapable, but the path you take to get there is not.",
+  "Not everyone who works hard is rewarded. But all who succeed worked hard.",
+  "The tide has turned, and so have I. It's a new paradigm!",
+  "When enough effort is put in, talent and environment cease to matter.",
+  "Run until you can’t run anymore, and then run some more."
+];
+
 const Terminal = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState([]);
@@ -10,15 +18,21 @@ const Terminal = () => {
   const inputRef = useRef(null);
 
   const personalInfo = {
-    location: "I reside in Sofia, Bulgaria. But I am pretty flexible.",
-    skills: ["Python, SQL & NoSQL, AWS, Spark, Hadoop, Docker, Bash, Linux, ML.","Or at least those are the relevant ones, I know some JS, React and C++ too but that's besides the point <:"],
-    hobbies: ["Right now I'm probably exploring datasets or solving automation problems.","But you can sometimes catch me playing Chess, going to Fitness, betting on oil prices, or even... reading a book. I know, pretty wild, right?"],
+    location: "I'm based in Sofia, Bulgaria. But I am pretty flexible.",
+    skills: ["Python, SQL & NoSQL, AWS, Spark, Hadoop, Docker, Bash, Linux, ML.","Or at least those are the relevant ones, I also know some JS, React and C++ but that's besides the point <:"],
+    hobbies: ["Right now I'm probably exploring datasets or solving automation problems.","But you can sometimes catch me playing Chess, going to Fitness, betting on oil prices, or even... reading a book. I know, pretty wild stuff, right?"], 
+    hidden : ["Woah, how did you find that? Guess you read the code, but still you deserve a reward, here, you can have this eaten apple",
+    " ,--./,-.",
+    "/,-._.--~",
+    " __}  {  ",
+    "/`-._,-`-,",
+    "`._,._,'  "],
     work_experience: [
-      "(2020-2024) Video Editor at Replayed.co, ik it doesn't have much in common with programming, but I learned how to communicate with clients, work around deadlines and function in a work enviroment through it, so I guess there's that.",
+      "(2020-2024) Video Editor at Replayed.co, ik it doesn't have much in common with programming, but I learned how to communicate with clients, work around deadlines and function in a work enviroment through it, so there's that.",
       "(2024-present)AI Automation Python Developer at OptimateX, a personal company I started with friends, we are currently automating workflows for companies.",
-      "But I am also actively searching for a full-time job, so don't hesitate to hire me."
+      "I am also actively searching for a full-time job, so don't hesitate to hire me."
     ],
-    projects: "You can see (some of) them above, by clicking on the links. They have detailed Read.me files in their respective repos, feel free to go through them.",
+    projects: "You can see (some of) them above, by clicking on the links. They have detailed README files in their respective repos, check them out.",
   };
 
   const handleCommand = (cmd) => {
@@ -30,6 +44,7 @@ const Terminal = () => {
       case 'skills':
       case 'hobbies':
       case 'projects':
+      case 'hideen':
       case 'work_experience':
         if (askedInfo[lowerCmd]) {
           setAskedInfo({...askedInfo, [lowerCmd]: askedInfo[lowerCmd] + 1});
@@ -129,6 +144,12 @@ const Terminal = () => {
 };
 
 function App() {
+  const [randomQuote, setRandomQuote] = useState("");
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setRandomQuote(quotes[randomIndex]);
+  }, []);
   return (
     <div className="container">
       <div className="header">
@@ -149,8 +170,7 @@ function App() {
         </div>
         <div className="profile-info">
           <h1>yo, Dobromir here</h1>
-          <p className="quote">"The future is inescapable, but the path you take to get there is not."</p>
-        </div>
+          <p className="quote">"{randomQuote}"</p>        </div>
       </div>
       <div className="binary-line">
         <div className="binary-content">
