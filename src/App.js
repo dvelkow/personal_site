@@ -44,7 +44,7 @@ const Terminal = () => {
       case 'skills':
       case 'hobbies':
       case 'projects':
-      case 'hideen':
+      case 'hidden':
       case 'work_experience':
         if (askedInfo[lowerCmd]) {
           setAskedInfo({...askedInfo, [lowerCmd]: askedInfo[lowerCmd] + 1});
