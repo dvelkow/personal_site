@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 
+const quotes = [
+  "The future is inescapable, but the path you take to get there is not.",
+  "Not everyone who works hard is rewarded. But all who succeed worked hard.",
+  "The tide has turned, and so have I. It's a new paradigm!",
+  "When enough effort is put in, talent and environment cease to matter.",
+  "Run until you can’t run anymore, and then run some more."
+];
+
 const Terminal = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState([]);
@@ -131,6 +139,13 @@ const Terminal = () => {
 };
 
 function App() {
+  const [randomQuote, setRandomQuote] = useState("");
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setRandomQuote(quotes[randomIndex]);
+  }, []);
+
   return (
     <div className="container">
       <div className="header">
@@ -151,7 +166,7 @@ function App() {
         </div>
         <div className="profile-info">
           <h1>yo, Dobromir here</h1>
-          <p className="quote">"The future is inescapable, but the path you take to get there is not."</p>
+          <p className="quote">"{randomQuote}"</p>
         </div>
       </div>
       <div class="binary-line">
