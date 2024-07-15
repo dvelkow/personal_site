@@ -20,7 +20,7 @@ const Terminal = () => {
   const personalInfo = {
     location: "I'm based in Sofia, Bulgaria. But I am pretty flexible.",
     skills: ["Python, SQL & NoSQL, AWS, Spark, Hadoop, Docker, Bash, Linux, ML.","Or at least those are the relevant ones, I also know some JS, React and C++ but that's besides the point <:"],
-    hobbies: ["Right now I'm probably exploring datasets or solving automation problems.","But you can sometimes catch me playing Chess, going to Fitness, betting on oil prices, or even... reading a book. I know, pretty wild stuff, right?"], 
+    hobbies: ["Right now I'm probably exploring datasets or solving automation problems.","But you can sometimes catch me playing Chess, going to the gym, betting on oil prices, or even... reading a book. I know, pretty wild stuff, right?"], 
     hidden : ["Woah, how did you find that? Guess you read the code, but still you deserve a reward, here, you can have this eaten apple:",
     " ,--./,-. ",
     "/,-._.--~ ",
@@ -102,7 +102,7 @@ const Terminal = () => {
   };
 
   useEffect(() => {
-    typeLines(['Hello, Im an asparing Data Engineer, type "info" to learn more about me.']);
+    typeLines(['Hello, Im an aspiring Data Engineer, type "info" to learn more about me.']);
   }, []);
 
   useEffect(() => {
