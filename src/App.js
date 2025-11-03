@@ -182,7 +182,7 @@ function App() {
         <h2>projects</h2>
         <ul className="projects-list">
           <li><a href="https://github.com/dvelkow/real_time_bulgarian_news_aggregator">real_time_bulgarian_news_aggregator</a></li>
-          <li><a href="https://github.com/dvelkow/loan_prediction_classification">loan_prediction_classification</a></li>
+          <li><a href="https://github.com/dvelkow/credit_risk_assessment_system_simulation">credit_risk_assessment_system_simulation</a></li>
           <li><a href="https://github.com/dvelkow/x-twitter_sentiment_analysis">x-twitter_sentiment_analysis</a></li>
           <li><a href="https://github.com/dvelkow/barebones_numpy_neural_network">barebones_numpy_neural_network</a></li>
         </ul>
