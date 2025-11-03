@@ -18,8 +18,8 @@ const Terminal = () => {
   const inputRef = useRef(null);
 
   const personalInfo = {
-    location: "I'm based in Sofia, Bulgaria. But I am pretty flexible.",
-    skills: ["Python, SQL & NoSQL, AWS, Spark, Hadoop, Docker, Bash, Linux, ML.","Or at least those are the relevant ones, I also know some JS, React and C++ but that's besides the point <:"],
+    location: "You can find me either in Sofia or Burgas at all times. But I am pretty flexible.",
+    skills: ["Python, SQL & NoSQL, React, AWS, Git, Spark, Hadoop, Linux.","Or at least those are the relevant ones, I also a bit of experience in Marking & Video Editing but that's besides the point <:"],
     hobbies: ["Right now I'm probably exploring datasets or solving automation problems.","But you can sometimes catch me playing Chess, going to the gym, betting on oil prices, or even... reading a book. I know, pretty wild stuff, right?"], 
     hidden : ["Woah, how did you find that? Guess you read the code, but still you deserve a reward, here, you can have this eaten apple:",
     " ,--./,-. ",
@@ -28,9 +28,11 @@ const Terminal = () => {
     "/`-._,-`,",
     "`._,._,'  "],
     work_experience: [
-      "(2020-2024) Video Editor at Replayed.co, ik it doesn't have much in common with programming, but I learned how to communicate with clients, work around deadlines and function in a work enviroment through it, so there's that.",
-      "(2024-present)AI Automation Python Developer at OptimateX, a personal company I started with friends, we are currently automating workflows for companies.",
-      "I am also actively searching for a full-time job, so don't hesitate to hire me."
+      "(2020-2023) Video Editor at Replayed.co, ik it doesn't have much in common with programming, but I learned how to communicate with clients, work around deadlines and function in a work enviroment through it, so there's that.",
+      "(2023-2024) AI Automation Python Developer at OptimateX, a personal company I started with friends with the idea of streamlining workflows for companies.",
+      "(2024-2025) ABAP Developer at KNAPP, a company that provides warehouse management software.",
+      "(2025-present) Full-Stack Developer at Idea Verde, an e-commerce store.",
+      "I am also always open to new opportunities, so don't hesitate to contact me."
     ],
     projects: "You can see (some of) them above, by clicking on the links. They have detailed README files in their respective repos, check them out.",
   };
@@ -102,7 +104,7 @@ const Terminal = () => {
   };
 
   useEffect(() => {
-    typeLines(['Hello, Im an aspiring Data Engineer, type "info" to learn more about me.']);
+    typeLines(['Hello, you entered my personal website, type "info" to learn more about me.']);
   }, []);
 
   useEffect(() => {
