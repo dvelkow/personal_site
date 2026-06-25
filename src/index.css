@@ -41,11 +41,6 @@ body {
     margin-top: -9px; 
     margin-bottom: 5px; 
   }
-.profile-info .quote {
-  margin-top: 58px; 
-}
-
-
 .profile-info p {
     margin: 0px;
     padding-bottom: 4px;
@@ -56,6 +51,11 @@ body {
     font-style: italic;
     opacity: 0.7;
     font-size: 0.75rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem 0.75rem;
+    box-sizing: border-box;
 }
 .binary-line {
     width: 100%;

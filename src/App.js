@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const quotes = [
-  "The future is inescapable, but the path you take to get there is not.",
   "Not everyone who works hard is rewarded. But all who succeed worked hard.",
   "The tide has turned, and so have I. It's a new paradigm!",
   "When enough effort is put in, talent and environment cease to matter.",
@@ -184,8 +183,9 @@ function App() {
         </div>
         <div className="profile-info">
           <h1>yo, Dobromir here</h1>
-          <p className="quote">"{randomQuote}"</p>        </div>
+        </div>
       </div>
+      <p className="quote">"{randomQuote}"</p>
       <div className="binary-line">
         <div className="binary-content">
         </div>
