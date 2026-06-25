@@ -91,7 +91,8 @@ const Terminal = () => {
       let i = 0;
       setCurrentLine('');
       const intervalId = setInterval(() => {
-        setCurrentLine((prev) => prev + line[i]);
+        const char = line[i];
+        setCurrentLine((prev) => prev + char);
         i++;
         if (i === line.length) {
           clearInterval(intervalId);
