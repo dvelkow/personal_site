@@ -5,7 +5,9 @@ const quotes = [
   "The tide has turned, and so have I. It's a new paradigm!",
   "When enough effort is put in, talent and environment cease to matter.",
   "Run until you can’t run anymore, and then run some more.",
-  "What is great in man is that he is a bridge and not an end."
+  "What is great in man is that he is a bridge and not an end.",
+  "Become who you are.",
+  "He who has a why to live can bear almost any how."
 ];
 
 const Terminal = () => {
