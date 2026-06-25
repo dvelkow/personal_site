@@ -29,7 +29,7 @@ const Terminal = () => {
     "`._,._,'  "],
     work_experience: [
       "(2020-2023) Video Editor at Replayed.co, ik it doesn't have much in common with programming, but I learned how to communicate with clients, work around deadlines and function in a work enviroment through it, so there's that.",
-      "(2023-2024) AI Automation Python Developer at OptimateX, a personal company I started with friends with the idea of streamlining workflows for companies.",
+      "(2023-2024) Co-founded a B2B startup with a small team, building automation tools to streamline operational workflows for brick and mortar companies.",
       "(2024-2025) ABAP Developer at KNAPP, where I worked on warehouse management software. It was my first experience with the corpo world, which left a bad taste in my mouth for it.",
       "(2025-present) Full-Stack Developer at Idea Verde, an e-commerce store.",
       "I am also always open to new opportunities, so don't hesitate to contact me."
