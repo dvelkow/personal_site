@@ -16,6 +16,7 @@ const Terminal = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [askedInfo, setAskedInfo] = useState({});
   const outputRef = useRef(null);
+  const terminalRef = useRef(null);
   const inputRef = useRef(null);
 
   const personalInfo = {
@@ -112,16 +113,16 @@ const Terminal = () => {
   }, []);
 
   useEffect(() => {
-    if (outputRef.current) {
-      outputRef.current.scrollTop = outputRef.current.scrollHeight;
+    if (terminalRef.current) {
+      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
     }
     if (inputRef.current && !isTyping) {
-      inputRef.current.focus();
+      inputRef.current.focus({ preventScroll: true });
     }
   }, [output, currentLine, isTyping]);
 
   return (
-    <div className="terminal" onClick={() => !isTyping && inputRef.current.focus()}>
+    <div className="terminal" ref={terminalRef} onClick={() => !isTyping && inputRef.current.focus()}>
       <div className="terminal-output" ref={outputRef}>
         {output.map((line, index) =>
           line.startsWith('> ') ? (
