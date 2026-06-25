@@ -1,7 +1,7 @@
 body {
     background-color: #000000;
     color: #40e07d;
-    font-family: 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
     margin: 0;
     padding: 0px;
     box-sizing: border-box;
@@ -110,35 +110,49 @@ body {
     height: 466px;
     background-color: rgba(64, 224, 125, 0.1);
     border: 1px solid #40e07d;
-    font-family: 'Courier New', monospace;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 0.9rem;
     padding: 10px;
     overflow-y: auto;
   }
-  
+
   .terminal-output {
     white-space: pre-wrap;
     word-break: break-word;
+    line-height: 1.6;
   }
-  
+
+  .terminal-output > div {
+    margin-bottom: 0.15rem;
+  }
+
   .input-line {
     display: flex;
-    align-items: center;
+    align-items: baseline;
   }
-  
-  .input-line span {
+
+  .input-line .prompt {
     color: #40e07d;
-    margin-right: 5px;
+    margin-right: 0.6ch;
+    flex-shrink: 0;
   }
-  
+
+  .input-line .command-text {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
   .input-line input {
     flex-grow: 1;
     background-color: transparent;
     border: none;
     color: #40e07d;
-    font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 0;
   }
-  
+
   .input-line input:focus {
     outline: none;
   }

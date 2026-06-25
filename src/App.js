@@ -5,7 +5,8 @@ const quotes = [
   "Not everyone who works hard is rewarded. But all who succeed worked hard.",
   "The tide has turned, and so have I. It's a new paradigm!",
   "When enough effort is put in, talent and environment cease to matter.",
-  "Run until you can’t run anymore, and then run some more."
+  "Run until you can’t run anymore, and then run some more.",
+  "What is great in man is that he is a bridge and not an end."
 ];
 
 const Terminal = () => {
@@ -20,7 +21,7 @@ const Terminal = () => {
   const personalInfo = {
     location: "You can find me either in Sofia or Burgas at all times. But I am pretty flexible.",
     skills: ["Python, SQL & NoSQL, React, AWS, Git, Spark, Hadoop, Linux.","Or at least those are the relevant ones, I also a bit of experience in Marking & Video Editing but that's besides the point <:"],
-    hobbies: ["Right now I'm probably exploring datasets or solving automation problems.","But you can sometimes catch me playing Chess, going to the gym, betting on oil prices, or even... reading a book. I know, pretty wild stuff, right?"], 
+    hobbies: "Honestly, if I'm dedicating any meaningful portion of my time on my hobbies I am probably not in a good spot mentally, but I guess my hobbies are chess, calisthenics, day-trading and most importantly - larping as an American while arguing about politics with actual Americans.",
     hidden : ["Woah, how did you find that? Guess you read the code, but still you deserve a reward, here, you can have this eaten apple:",
     " ,--./,-. ",
     "/,-._.--~ ",
@@ -35,18 +36,20 @@ const Terminal = () => {
       "I am also always open to new opportunities, so don't hesitate to contact me."
     ],
     projects: "You can see (some of) them above, by clicking on the links. They have detailed README files in their respective repos, check them out.",
+    life_philosophy: "I am a Nietzschean futurist. My biggest goal in life is to outcompete everyone on the biggest stage I can put myself on. Or in other words, to find something meaningful and quantifiable I can dedicate my life force into.",
   };
 
   const handleCommand = (cmd) => {
     const lowerCmd = cmd.toLowerCase();
     switch(lowerCmd) {
       case 'info':
-        return ['Choose from: "location", "skills", "hobbies", "work_experience", "projects"'];
+        return ['Choose from: "location", "skills", "hobbies", "work_experience", "projects", "life_philosophy"'];
       case 'location':
       case 'skills':
       case 'hobbies':
       case 'projects':
       case 'hidden':
+      case 'life_philosophy':
       case 'work_experience':
         if (askedInfo[lowerCmd]) {
           setAskedInfo({...askedInfo, [lowerCmd]: askedInfo[lowerCmd] + 1});
@@ -120,13 +123,20 @@ const Terminal = () => {
   return (
     <div className="terminal" onClick={() => !isTyping && inputRef.current.focus()}>
       <div className="terminal-output" ref={outputRef}>
-        {output.map((line, index) => (
-          <div key={index}>{line}</div>
-        ))}
+        {output.map((line, index) =>
+          line.startsWith('> ') ? (
+            <div key={index} className="input-line">
+              <span className="prompt">{'>'}</span>
+              <span className="command-text">{line.slice(2)}</span>
+            </div>
+          ) : (
+            <div key={index}>{line}</div>
+          )
+        )}
         {currentLine && <div>{currentLine}</div>}
         {!isTyping && (
           <div className="input-line">
-            <span>{'>'}</span>
+            <span className="prompt">{'>'}</span>
             <input
               ref={inputRef}
               type="text"
@@ -184,8 +194,8 @@ function App() {
         <ul className="projects-list">
           <li><a href="https://github.com/dvelkow/real_time_bulgarian_news_aggregator">real_time_bulgarian_news_aggregator</a></li>
           <li><a href="https://github.com/dvelkow/credit_risk_assessment_system_simulation">credit_risk_assessment_system_simulation</a></li>
-          <li><a href="https://github.com/dvelkow/x-twitter_sentiment_analysis">x-twitter_sentiment_analysis</a></li>
-          <li><a href="https://github.com/dvelkow/barebones_numpy_neural_network">barebones_numpy_neural_network</a></li>
+          <li><a href="https://github.com/dvelkow/Yet_Another_ToDo_but_Trello_Insipred">Yet_Another_ToDo_but_Trello_Insipred</a></li>
+          <li><a href="https://github.com/dvelkow/historical-atlas">historical-atlas</a></li>
         </ul>
       </div>
       <div className="section">
