@@ -10,12 +10,26 @@ const quotes = [
   "He who has a why to live can bear almost any how."
 ];
 
+const longestCommonPrefix = (strs) => {
+  if (strs.length === 0) return '';
+  let prefix = strs[0];
+  for (const s of strs) {
+    while (!s.startsWith(prefix)) {
+      prefix = prefix.slice(0, -1);
+      if (prefix === '') return '';
+    }
+  }
+  return prefix;
+};
+
 const Terminal = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState([]);
   const [currentLine, setCurrentLine] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const [askedInfo, setAskedInfo] = useState({});
+  const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(null);
   const outputRef = useRef(null);
   const terminalRef = useRef(null);
   const inputRef = useRef(null);
@@ -75,13 +89,71 @@ const Terminal = () => {
     }
   };
 
+  const commandList = ['info', 'location', 'skills', 'hobbies', 'work_experience', 'projects', 'life_philosophy', 'clear'];
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newOutput = handleCommand(input);
-    setOutput([...output, `> ${input}`]);
+    const command = input;
+    if (command.trim() !== '') {
+      setHistory((prev) => [...prev, command]);
+    }
+    setHistoryIndex(null);
+
+    if (command.trim() === '') {
+      setOutput([...output, '> ']);
+      setInput('');
+      return;
+    }
+
+    const newOutput = handleCommand(command);
+    setOutput([...output, `> ${command}`]);
     setInput('');
     setIsTyping(true);
     typeLines(newOutput);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
+      return;
+    }
+
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (history.length === 0) return;
+      const nextIndex = historyIndex === null ? history.length - 1 : Math.max(0, historyIndex - 1);
+      setHistoryIndex(nextIndex);
+      setInput(history[nextIndex]);
+      return;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex === null) return;
+      const nextIndex = historyIndex + 1;
+      if (nextIndex >= history.length) {
+        setHistoryIndex(null);
+        setInput('');
+      } else {
+        setHistoryIndex(nextIndex);
+        setInput(history[nextIndex]);
+      }
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const partial = input.trim().toLowerCase();
+      if (partial === '') return;
+      const matches = commandList.filter((c) => c.startsWith(partial));
+      if (matches.length === 1) {
+        setInput(matches[0]);
+      } else if (matches.length > 1) {
+        const prefix = longestCommonPrefix(matches);
+        if (prefix.length > partial.length) setInput(prefix);
+        setOutput((prev) => [...prev, `> ${input}`, matches.join('    ')]);
+      }
+    }
   };
 
   const typeLines = async (lines) => {
@@ -143,13 +215,14 @@ const Terminal = () => {
               ref={inputRef}
               type="text"
               value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') {
-                  handleSubmit(e);
-                }
+              onChange={(e) => {
+                setInput(e.target.value);
+                setHistoryIndex(null);
               }}
+              onKeyDown={handleKeyDown}
               disabled={isTyping}
+              autoComplete="off"
+              spellCheck="false"
             />
           </div>
         )}
