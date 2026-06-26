@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const quotes = [
-  "Not everyone who works hard is rewarded. But all who succeed worked hard.",
-  "The tide has turned, and so have I. It's a new paradigm!",
-  "When enough effort is put in, talent and environment cease to matter.",
-  "Run until you can’t run anymore, and then run some more.",
   "What is great in man is that he is a bridge and not an end.",
   "Become who you are.",
-  "He who has a why to live can bear almost any how."
+  "He who has a why to live can bear almost any how.",
+  "Whatever your hand finds to do, do it with all your might.",
+  "What stands in the way becomes the way."
 ];
 
 const longestCommonPrefix = (strs) => {
