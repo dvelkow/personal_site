@@ -18,7 +18,7 @@ body {
     display: inline-block;
     gap: 0rem;
     max-width: 100%;
-    overflow: hidden;
+    overflow: visible;
     padding-left: 138px;
     flex-direction: column;
 }
@@ -30,6 +30,7 @@ body {
 .profile-image {
     width: 15rem;
     height: 4rem;
+    font-family: 'Courier New', monospace;
     font-size: 10px;
     line-height: 12px;
     white-space: pre;
