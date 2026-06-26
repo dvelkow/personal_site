@@ -264,6 +264,10 @@ function App() {
         </div>
       </div>
       <div className="section">
+        <h2>about_me</h2>
+        <Terminal />
+      </div>
+      <div className="section">
         <h2>projects</h2>
         <ul className="projects-list">
           <li><a href="https://github.com/dvelkow/real_time_bulgarian_news_aggregator">real_time_bulgarian_news_aggregator</a></li>
@@ -271,10 +275,6 @@ function App() {
           <li><a href="https://github.com/dvelkow/Yet_Another_ToDo_but_Trello_Insipred">Yet_Another_ToDo_but_Trello_Insipred</a></li>
           <li><a href="https://github.com/dvelkow/historical-atlas">historical-atlas</a></li>
         </ul>
-      </div>
-      <div className="section">
-        <h2>personal information</h2>
-        <Terminal />
       </div>
     </div>
   );
