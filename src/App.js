@@ -184,7 +184,7 @@ function App() {
           `}
         </div>
         <div className="profile-info">
-          <h1>yo, Dobromir here</h1>
+          <h1>who_is_dobromir</h1>
         </div>
       </div>
       <p className="quote">"{randomQuote}"</p>
