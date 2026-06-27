@@ -34,7 +34,11 @@ const Terminal = () => {
 
   const personalInfo = {
     location: "You can find me either in Sofia or Burgas at all times. But I am pretty flexible.",
-    skills: ["Python, SQL & NoSQL, React, AWS, Git, Spark, Hadoop, Linux.","Or at least those are the relevant ones, I also a bit of experience in Marking & Video Editing but that's besides the point <:"],
+    skills: [
+      "Things I'm probably top 1% at: day-trading, creating systems",
+      "Things I'm probably top 10% at: coding, video editing",
+      "Things I'm okayish at: marketing, design"
+    ],
     hobbies: "Honestly, if I'm dedicating any meaningful portion of my time on my hobbies I am probably not in a good spot mentally, but I guess my hobbies are chess, calisthenics, day-trading and most importantly - larping as an American while arguing about politics with actual Americans.",
     hidden : ["Woah, how did you find that? Guess you read the code, but still you deserve a reward, here, you can have this eaten apple:",
     " ,--./,-. ",
